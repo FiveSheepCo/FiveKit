@@ -1,5 +1,4 @@
 # FiveKit
-> All of FiveSheep's in-house app development tooling in one package.
 
 **FiveKit** is a collection of Swift packages developed by [FiveSheep](https://fivesheep.co) for our in-house app
 development.
