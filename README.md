@@ -27,6 +27,10 @@ functional user interfaces.
 
 View the repository here: [SwiftUIElements]
 
+### FiveSheep Internals
+
+FiveKit also contains FiveSheep Internals, which are components we use in our apps, that won't be of much use to anyone else.
+
 ## FiveKit Meta-Package
 
 While we provide all our packages individually, internally we use FiveKit to access our in-house packages. It's a single
