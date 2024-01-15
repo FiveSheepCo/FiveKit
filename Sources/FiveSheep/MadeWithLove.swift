@@ -4,6 +4,8 @@ import Foundation
 import SwiftUI
 
 public struct MadeWithLove: View {
+    public init() {}
+    
     public var body: some View {
         Section {
             EmptyView()
