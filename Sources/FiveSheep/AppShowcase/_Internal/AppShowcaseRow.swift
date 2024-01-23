@@ -64,7 +64,8 @@ struct AppRow: View {
                     name: "Preview App",
                     teaser: "Lorem ipsum dolor sit amet consectetur adipiscing elit",
                     iconUrl: "https://fivesheep.co/favicon.ico",
-                    bundleId: "co.fivesheep._preview"
+                    bundleId: "co.fivesheep._preview",
+                    trackId: 12345
                 )
             )
         } else {

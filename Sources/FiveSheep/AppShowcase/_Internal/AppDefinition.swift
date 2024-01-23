@@ -9,6 +9,11 @@ struct AppDefinition: Identifiable, Decodable {
     let teaser: String
     let iconUrl: String
     let bundleId: String
+    var trackId: Int
+    
+    var appStoreId: String {
+        String(trackId)
+    }
     
     var id: String {
         bundleId
@@ -18,7 +23,7 @@ struct AppDefinition: Identifiable, Decodable {
 extension AppDefinition {
     func presentStoreView() {
         let sKStoreProductViewController = SKStoreProductViewController()
-        let parameters = [SKStoreProductParameterITunesItemIdentifier: bundleId]
+        let parameters = [SKStoreProductParameterITunesItemIdentifier: appStoreId]
         sKStoreProductViewController.loadProduct(withParameters: parameters)
         #if canImport(UIKit)
         (UIApplication.shared.connectedScenes.first as! UIWindowScene).windows.first?.rootViewController?.present(sKStoreProductViewController)
