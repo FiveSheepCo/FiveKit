@@ -20,6 +20,7 @@ struct AppDefinition: Identifiable, Decodable {
     }
 }
 
+@available(macOS 11.0, *)
 extension AppDefinition {
     func presentStoreView() {
         let sKStoreProductViewController = SKStoreProductViewController()

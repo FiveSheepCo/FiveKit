@@ -3,7 +3,7 @@
 import Foundation
 import SwiftUI
 
-@available(iOS 17.0, *)
+@available(iOS 17.0, macOS 14.0, *)
 struct AppRow: View {
     private var model = AppShowcaseViewModel.shared
     
@@ -58,7 +58,7 @@ struct AppRow: View {
 
 #Preview {
     Form {
-        if #available(iOS 17.0, *) {
+        if #available(iOS 17.0, macOS 14.0, *) {
             AppRow(
                 app: AppDefinition(
                     name: "Preview App",

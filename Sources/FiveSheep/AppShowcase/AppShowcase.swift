@@ -8,7 +8,7 @@ import SwiftUI
 /// Asynchronously loads recommended FiveSheep apps and displays them inside of a section.
 ///
 /// - Note: If you're targeting iOS 16 or lower, use `SchafOffalKit` instead.
-@available(iOS 17.0, *)
+@available(iOS 17.0, macOS 14.0, *)
 public struct AppShowcase<Content: View>: View {
     
     @Bindable
@@ -40,7 +40,7 @@ public struct AppShowcase<Content: View>: View {
 
 #Preview {
     Form {
-        if #available(iOS 17.0, *) {
+        if #available(iOS 17.0, macOS 14.0, *) {
             AppShowcase {
                 Text(verbatim: "Apps")
             }

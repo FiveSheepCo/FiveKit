@@ -5,7 +5,7 @@ import StoreKit
 
 @MainActor
 @Observable
-@available(iOS 17.0, *)
+@available(iOS 17.0, macOS 14.0, *)
 class AppShowcaseViewModel {
     static let shared = AppShowcaseViewModel()
     
@@ -47,7 +47,7 @@ class AppShowcaseViewModel {
     }
 }
 
-@available(iOS 17.0, *)
+@available(iOS 17.0, macOS 14.0, *)
 extension AppShowcaseViewModel {
     enum Constants {
         static let lookupUrl = URL(string: "https://fivesheep.co/api/promotions.json")!
