@@ -3,9 +3,9 @@ import SwiftUI
 
 #if os(iOS)
 @available(iOS 16, *)
-struct AboutSettingsPage: View {
-    @State private var isExportingLogs: Bool
-    @State private var exportedLogString: String?
+public struct AboutSettingsPage: View {
+    @State private var isExportingLogs: Bool = false
+    @State private var exportedLogString: String? = nil
     
     private func export() {
         if let exportedLogString {
@@ -23,14 +23,16 @@ struct AboutSettingsPage: View {
                     await LogStore.export().joined(separator: "\n")
                 }.value
                 
-                isExportingLogs = false
-                
                 export()
+                
+                isExportingLogs = false
             }
         }
     }
     
-    var body: some View {
+    public init() {}
+    
+    public var body: some View {
         Form {
             Section {
                 HStack {
