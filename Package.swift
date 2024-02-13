@@ -29,7 +29,8 @@ let package = Package(
             dependencies: [
                 "FoundationPlus",
                 "SwiftUIElements",
-            ]
+            ],
+            resources: [.process("Resources")]
         )
     ]
 )
