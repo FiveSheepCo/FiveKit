@@ -25,7 +25,9 @@ public struct AboutSettingsPage: View {
                 
                 export()
                 
-                isExportingLogs = false
+                Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+                    isExportingLogs = false
+                }
             }
         }
     }
@@ -46,8 +48,10 @@ public struct AboutSettingsPage: View {
                 if isExportingLogs {
                     HStack {
                         Text("settings.about.gatheringLogs", bundle: .module)
+                            .foregroundStyle(Color.gray)
                         Spacer()
                         ProgressView()
+                            .tint(Color.gray)
                     }
                 } else {
                     Button(action: export) {
