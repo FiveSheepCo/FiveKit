@@ -38,14 +38,11 @@ public struct AppShowcase<Content: View>: View {
     }
 }
 
+@available(iOS 17.0, macOS 14.0, *)
 #Preview {
     Form {
-        if #available(iOS 17.0, macOS 14.0, *) {
-            AppShowcase {
-                Text(verbatim: "Apps")
-            }
-        } else {
-            EmptyView()
+        AppShowcase {
+            Text(verbatim: "Apps")
         }
     }
 }
