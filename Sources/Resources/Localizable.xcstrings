@@ -1,0 +1,266 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "settings.about.btn.exportLogs" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Protokolle Exportieren"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Export Logs"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exportar registros"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "लॉग निर्यात"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ログをエクスポート"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "로그 내보내기"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exportar Logs"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Экспорт журналов"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ส่งออกบันทึก"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exportar registros"
+          }
+        }
+      }
+    },
+    "settings.about.gatheringLogs" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Protokolle sammeln..."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collecting logs..."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recopilando registros..."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "लॉग इकट्ठा कर रहा है..."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ログの収集..."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "로그 수집 중..."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coletando logs..."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сбор журналов..."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "การเก็บรวบรวมบันทึก..."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recopilando registros..."
+          }
+        }
+      }
+    },
+    "settings.about.section.logs.footer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dies dient hauptsächlich diagnostischen Zwecken.\n\nEin Mitarbeiter von FiveSheep könnte dich bitten, Protokolldateien zu exportieren, um bei der Diagnose von Problemen mit der App zu helfen.\n\nSei versichert, dass diese Protokolldateien keine persönlich identifizierbaren oder privaten Informationen enthalten."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is mostly for diagnostic purposes.  An employee of FiveSheep might ask you to export log files in order to aid in diagnosing issues you're having with the app.  Rest assured that these log files do not contain any personally identifiable or private information."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta es principalmente para fines de diagnóstico. Un empleado de FiveSheep podría pedirte que exportes archivos de registro para ayudar a diagnosticar los problemas que estás teniendo con la aplicación. Ten la seguridad de que estos archivos de registro no contienen información personal identificable o privada."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "यह मुख्य रूप से नैदानिक उद्देश्यों के लिए है।  FiveSheep के कर्मचारी आपसे ऐप में हो रही समस्याओं का निदान करने में सहायता करने के लिए आपसे लॉग फ़ाइलें निर्यात करने के लिए कह सकते हैं।  आपको आश्वासन दिया जाता है कि ये लॉग फ़ाइलें किसी भी व्यक्तिगत पहचान या निजी जानकारी को नहीं समेतती हैं।"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この機能は主に診断目的で使用されます。\n\nFiveSheepの従業員がアプリの問題を診断するためにログファイルのエクスポートを依頼することがあります。\n\nこれらのログファイルには個人を特定する情報やプライベートな情報は含まれていませんので、安心してください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이것은 대부분 진단 목적으로 사용됩니다. FiveSheep의 직원은 앱의 문제를 진단하는 데 도움을 주기 위해 로그 파일을 내보내도록 요청할 수 있습니다. 이 로그 파일에는 개인 식별 정보나 개인 정보가 포함되어 있지 않음을 확신해 주세요."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este é principalmente para fins de diagnóstico. Um funcionário da FiveSheep pode pedir que você exporte arquivos de log para ajudar a diagnosticar os problemas que você está tendo com o aplicativo. Tenha a certeza de que esses arquivos de log não contêm nenhuma informação pessoal identificável ou privada."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Это в основном для диагностических целей.  Сотрудник FiveSheep может попросить вас экспортировать файлы журналов, чтобы помочь в диагностике проблем, с которыми вы сталкиваетесь в приложении.  Можете быть уверены, что эти файлы журналов не содержат никакой личной или конфиденциальной информации."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "นี่เป็นเพียงเพื่อวัตถุประสงค์ในการวินิจฉัยปัญหา\nพนักงานของ FiveSheep อาจขอให้คุณส่งออกไฟล์บันทึกเพื่อช่วยในการวินิจฉัยปัญหาที่คุณพบกับแอปพลิเคชัน\nโปรดมั่นใจว่าไฟล์บันทึกเหล่านี้ไม่มีข้อมูลส่วนตัวหรือข้อมูลส่วนบุคคลใด ๆ ที่สามารถระบุตัวบุคคลได้"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta es principalmente para fines de diagnóstico. Un empleado de FiveSheep podría pedirte que exportes archivos de registro para ayudar a diagnosticar los problemas que estás teniendo con la aplicación. Ten la seguridad de que estos archivos de registro no contienen información personal identificable o privada."
+          }
+        }
+      }
+    },
+    "settings.about.version" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App-Version"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Version"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versión de la aplicación"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ऐप संस्करण"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アプリのバージョン"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "앱 버전"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versão do aplicativo"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Версия приложения"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เวอร์ชันแอป"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versión de la aplicación"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

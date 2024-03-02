@@ -56,21 +56,18 @@ struct AppRow: View {
     }
 }
 
+@available(iOS 17.0, macOS 14.0, *)
 #Preview {
     Form {
-        if #available(iOS 17.0, macOS 14.0, *) {
-            AppRow(
-                app: AppDefinition(
-                    name: "Preview App",
-                    teaser: "Lorem ipsum dolor sit amet consectetur adipiscing elit",
-                    iconUrl: "https://fivesheep.co/favicon.ico",
-                    bundleId: "co.fivesheep._preview",
-                    trackId: 12345
-                )
+        AppRow(
+            app: AppDefinition(
+                name: "Preview App",
+                teaser: "Lorem ipsum dolor sit amet consectetur adipiscing elit",
+                iconUrl: "https://fivesheep.co/favicon.ico",
+                bundleId: "co.fivesheep._preview",
+                trackId: 12345
             )
-        } else {
-            EmptyView()
-        }
+        )
     }
 }
 
