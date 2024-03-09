@@ -6,25 +6,17 @@ public extension Hashable {
     
     /// Shares the responder using a `UIActivityViewController`.
     @available(iOSApplicationExtension, unavailable)
-    func share(applicationActivities: [UIActivity]? = nil) {
-        let controller : UIActivityViewController
+    func share(applicationActivities: [UIActivity]? = nil, completion: (() -> Void)? = nil) {
+        guard var viewController = UIApplication.shared.windows.first?.rootViewController else {
+            return
+        }
         
-        controller = UIActivityViewController(activityItems: [self], applicationActivities: applicationActivities)
+        while let next = viewController.presentedViewController, next != viewController {
+            viewController = next
+        }
         
-        controller.show(type: .present)
-    }
-}
-
-public extension Array {
-    
-    /// Shares the items of the responder using a `UIActivityViewController`.
-    @available(iOSApplicationExtension, unavailable)
-    func share(applicationActivities : [UIActivity]? = nil) {
-        let controller : UIActivityViewController
-        
-        controller = UIActivityViewController(activityItems: self, applicationActivities: applicationActivities)
-        
-        controller.show(type: .present)
+        let controller: UIActivityViewController = UIActivityViewController(activityItems: [self], applicationActivities: applicationActivities)
+        viewController.present(controller, animated: true, completion: completion)
     }
 }
 #endif

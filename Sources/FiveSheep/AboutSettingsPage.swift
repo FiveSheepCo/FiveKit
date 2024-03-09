@@ -7,14 +7,14 @@ public struct AboutSettingsPage: View {
     @State private var isExportingLogs: Bool = false
     @State private var exportedLogString: String? = nil
     
-    private func export() {
+    private func export(completion: (() -> Void)? = nil) {
         if let exportedLogString {
             let filename = "\(Bundle.main.identifier).log"
             let directory = SKDirectory.caches
             directory.save(data: exportedLogString.data(using: .utf8)!, at: filename)
             
             let url = directory.url.appendingPathComponent(filename)
-            url.share()
+            url.share(completion: completion)
         } else {
             isExportingLogs = true
             
@@ -23,10 +23,9 @@ public struct AboutSettingsPage: View {
                     await LogStore.export().joined(separator: "\n")
                 }.value
                 
-                export()
-                
-                Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+                export {
                     isExportingLogs = false
+                    completion?()
                 }
             }
         }
@@ -54,7 +53,7 @@ public struct AboutSettingsPage: View {
                             .tint(Color.gray)
                     }
                 } else {
-                    Button(action: export) {
+                    Button { export() } label: {
                         Text("settings.about.btn.exportLogs", bundle: .module)
                     }
                 }

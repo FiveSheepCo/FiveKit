@@ -1,14 +1,14 @@
 import OSLog
 
 @available(iOS 14, macOS 11, watchOS 7, tvOS 14, *)
-extension Logger {
+public extension Logger {
     private static var subsystem = Bundle.main.bundleIdentifier!
     
-    static func `for`<T>(_ type: T.Type) -> Logger {
-        withCategory(String(describing: type))
+    init<T>(type: T.Type) {
+        self.init(subsystem: Self.subsystem, category: String(describing: type))
     }
     
-    static func withCategory(_ category: String) -> Logger {
-        Logger(subsystem: subsystem, category: category)
+    init(category: String) {
+        self.init(subsystem: Self.subsystem, category: category)
     }
 }
