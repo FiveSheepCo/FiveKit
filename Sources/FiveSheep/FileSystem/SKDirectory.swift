@@ -81,12 +81,14 @@ public class SKDirectory : SKFileSystemItem {
     }
     
     /// Deletes the file at the given path, if it exists.
-    public func delete(at path : String) {
+    @discardableResult
+    public func delete(at path : String) -> Error? {
         do {
             try fileSystem.removeItem(atPath: _getPath(at: path))
-        } catch let err {
-            print("File Deletion Error:", err)
+        } catch {
+            return error
         }
+        return nil
     }
     
     /// Deletes the file at the given path, if it exists.
