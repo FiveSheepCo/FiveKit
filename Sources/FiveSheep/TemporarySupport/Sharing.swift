@@ -16,6 +16,12 @@ public extension Hashable {
         }
         
         let controller: UIActivityViewController = UIActivityViewController(activityItems: [self], applicationActivities: applicationActivities)
+        controller.modalPresentationStyle = .popover
+        if let popoverController = controller.popoverPresentationController {
+            popoverController.sourceView = viewController.view
+            popoverController.sourceRect = viewController.view.bounds
+            popoverController.permittedArrowDirections = []
+        }
         viewController.present(controller, animated: true, completion: completion)
     }
 }
