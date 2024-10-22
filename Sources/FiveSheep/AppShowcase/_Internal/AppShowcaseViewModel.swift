@@ -62,7 +62,7 @@ class AppShowcaseViewModel {
         let (data, _) = try await URLSession.shared.data(for: request)
         
         UserDefaults.standard.set(data, forKey: Constants.userDefaultsStorageKey)
-        UserDefaults.standard.set(Date.now, forKey: Constants.userDefaultsStorageKey)
+        UserDefaults.standard.set(Date.now, forKey: Constants.userDefaultsDateStorageKey)
         
         return data
     }
