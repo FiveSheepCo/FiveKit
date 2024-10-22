@@ -5,6 +5,10 @@ import SwiftUI
 
 @available(iOS 17.0, macOS 14.0, *)
 struct AppRow: View {
+    enum Constants {
+        static let cacheDirectory = SKDirectory.caches.directoryByAppending(path: "AppShowcase", createIfNonexistant: true)
+    }
+    
     private var model = AppShowcaseViewModel.shared
     
     @ScaledMetric private var titleFontSize: CGFloat = 14
@@ -12,6 +16,8 @@ struct AppRow: View {
     @ScaledMetric private var downloadSymbolSize: CGFloat = 22
     
     private let app: AppDefinition
+    
+    @State var loadedImage: UIImage?
     
     init(app: AppDefinition) {
         self.app = app
@@ -21,13 +27,13 @@ struct AppRow: View {
         HStack(alignment: .center, spacing: 16) {
             
             // App icon
-            AsyncImage(url: URL(string: app.iconUrl)) { image in
-                image
+            if let loadedImage {
+                Image(uiImage: loadedImage)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 48, height: 48)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
-            } placeholder: {
+            } else {
                 ProgressView()
             }
             
@@ -52,6 +58,24 @@ struct AppRow: View {
         .contentShape(Rectangle())
         .onTapGesture {
             app.presentStoreView()
+        }
+        .onAppear {
+            let imageStorageName = app.iconUrl.urlEncoded
+            loadedImage = Constants.cacheDirectory.getData(at: imageStorageName).map({ UIImage(data: $0) }) ?? nil
+            if loadedImage == nil, let url = URL(string: app.iconUrl) {
+                Task {
+                    do {
+                        let (data, _) = try await URLSession.shared.data(from: url)
+                        
+                        Constants.cacheDirectory.save(data: data, at: imageStorageName)
+                        
+                        loadedImage = UIImage(data: data)
+                    }
+                    catch {
+                        
+                    }
+                }
+            }
         }
     }
 }
