@@ -1,7 +1,16 @@
 #if canImport(SwiftUI) && canImport(StoreKit)
-
 import Foundation
 import SwiftUI
+
+#if os(macOS)
+private typealias UIImage = NSImage
+
+private extension Image {
+    init(uiImage: UIImage) {
+        self.init(nsImage: uiImage)
+    }
+}
+#endif
 
 @available(iOS 17.0, macOS 14.0, *)
 struct AppRow: View {
@@ -17,7 +26,7 @@ struct AppRow: View {
     
     private let app: AppDefinition
     
-    @State var loadedImage: UIImage?
+    @State private var loadedImage: UIImage?
     
     init(app: AppDefinition) {
         self.app = app
