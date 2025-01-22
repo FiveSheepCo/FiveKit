@@ -71,7 +71,7 @@ class AppShowcaseViewModel {
 @available(iOS 17.0, macOS 14.0, *)
 extension AppShowcaseViewModel {
     enum Constants {
-        static let lookupUrl = URL(string: "https://fivesheep.co/api/promotions.json")!
+        static let lookupUrl = URL(string: "https://api.fivesheep.co/promotions.json")!
         static let countryCode = (Locale.current as NSLocale).countryCode ?? "US"
         static let userDefaultsStorageKey = "LoadedAppShowcase"
         static let userDefaultsDateStorageKey = "LoadedAppShowcase-Date"
