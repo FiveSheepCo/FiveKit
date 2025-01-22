@@ -33,7 +33,9 @@ class AppShowcaseViewModel {
         
         let data: Data
         
-        if let storedData = UserDefaults.standard.data(forKey: Constants.userDefaultsStorageKey), let date = UserDefaults.standard.object(forKey: Constants.userDefaultsDateStorageKey) as? Date {
+        if let storedData = UserDefaults.standard.data(forKey: Constants.userDefaultsStorageKey),
+           let date = UserDefaults.standard.object(forKey: Constants.userDefaultsDateStorageKey) as? Date,
+           (try? JSONSerialization.jsonObject(with: storedData, options: [])) != nil {
             data = storedData
             
             if date.timeIntervalUntilNow > 30 * 86400 {
