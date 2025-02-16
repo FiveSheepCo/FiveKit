@@ -18,27 +18,26 @@ public struct AppShowcase<Content: View>: View {
     
     public init(@ViewBuilder header: @escaping () -> Content) {
         self.header = header
+
+        Task { [self] in
+            await model.setup()
+        }
     }
     
     public var body: some View {
-        Group {
-            if model.apps == nil || model.apps?.isEmpty == false {
-                Section {
-                    if let apps = model.apps {
-                        ForEach(apps) { app in
-                            AppRow(app: app)
-                        }
-                    } else {
-                        ProgressView()
+        if model.apps == nil || model.apps?.isEmpty == false {
+            Section {
+                if let apps = model.apps {
+                    ForEach(apps) { app in
+                        AppRow(app: app)
                     }
-                } header: {
-                    header()
+                } else {
+                    ProgressView()
                 }
-                .transition(.opacity)
+            } header: {
+                header()
             }
-        }
-        .task {
-            await model.setup()
+            .transition(.opacity.animation(.default))
         }
     }
 }
