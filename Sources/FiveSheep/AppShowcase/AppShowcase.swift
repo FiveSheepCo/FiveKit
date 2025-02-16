@@ -21,16 +21,21 @@ public struct AppShowcase<Content: View>: View {
     }
     
     public var body: some View {
-        Section {
-            if let apps = model.apps {
-                ForEach(apps) { app in
-                    AppRow(app: app)
+        Group {
+            if model.apps == nil || model.apps?.isEmpty == false {
+                Section {
+                    if let apps = model.apps {
+                        ForEach(apps) { app in
+                            AppRow(app: app)
+                        }
+                    } else {
+                        ProgressView()
+                    }
+                } header: {
+                    header()
                 }
-            } else {
-                ProgressView()
+                .transition(.opacity)
             }
-        } header: {
-            header()
         }
         .task {
             await model.setup()

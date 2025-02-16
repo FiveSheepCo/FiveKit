@@ -61,8 +61,13 @@ class AppShowcaseViewModel {
         request.addValue(Constants.countryCode, forHTTPHeaderField: "X-Country-Code")
         
         // Await response
-        let (data, _) = try await URLSession.shared.data(for: request)
-        
+        let (data, response) = try await URLSession.shared.data(for: request)
+
+        // Handle error
+        if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
+            throw URLError(.badServerResponse)
+        }
+
         UserDefaults.standard.set(data, forKey: Constants.userDefaultsStorageKey)
         UserDefaults.standard.set(Date.now, forKey: Constants.userDefaultsDateStorageKey)
         
