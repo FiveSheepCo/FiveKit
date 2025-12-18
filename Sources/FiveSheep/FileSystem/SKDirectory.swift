@@ -1,11 +1,14 @@
 #if os(macOS) || os(iOS) || os(tvOS) || os(watchOS)
 import Foundation
 
-private let fileSystem = FileManager.default
+private var fileSystem: FileManager {
+    FileManager.default
+}
+
 private let slash = "/"
 
 /// A dictionary representation.
-public class SKDirectory : SKFileSystemItem {
+public final class SKDirectory: SKFileSystemItem, @unchecked Sendable {
     /// The Bundle directory.
     public static let bundle = SKDirectory(path : Bundle.main.bundlePath)
     

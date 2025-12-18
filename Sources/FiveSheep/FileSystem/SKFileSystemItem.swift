@@ -1,10 +1,8 @@
 #if os(macOS) || os(iOS) || os(tvOS) || os(watchOS)
 import Foundation
 
-private let fileSystem = FileManager.default
-
 /// An item in the filesystem.
-public class SKFileSystemItem {
+public class SKFileSystemItem: @unchecked Sendable {
     /// The path of the receiver.
     public let path : String
     
@@ -16,7 +14,7 @@ public class SKFileSystemItem {
     /// Whether the receiver exists in the file system.
     public var exists : Bool {
         var isDirectory : ObjCBool = false
-        if fileSystem.fileExists(atPath: path, isDirectory: &isDirectory) {
+        if FileManager.default.fileExists(atPath: path, isDirectory: &isDirectory) {
             return isDirectory.boolValue != (self is SKFile)
         }
         return false

@@ -6,7 +6,7 @@ public extension Hashable {
     
     /// Shares the responder using a `UIActivityViewController`.
     @available(iOSApplicationExtension, unavailable)
-    func share(applicationActivities: [UIActivity]? = nil, completion: (() -> Void)? = nil) {
+    @MainActor func share(applicationActivities: [UIActivity]? = nil, completion: (() -> Void)? = nil) {
         guard var viewController = UIApplication.shared.windows.first?.rootViewController else {
             return
         }

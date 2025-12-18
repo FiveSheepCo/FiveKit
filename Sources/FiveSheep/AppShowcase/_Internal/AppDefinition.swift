@@ -22,6 +22,8 @@ struct AppDefinition: Identifiable, Decodable {
 
 @available(macOS 11.0, *)
 extension AppDefinition {
+
+    @MainActor
     func presentStoreView() {
         let sKStoreProductViewController = SKStoreProductViewController()
         let parameters = [SKStoreProductParameterITunesItemIdentifier: appStoreId]
