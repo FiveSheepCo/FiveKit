@@ -5,7 +5,7 @@ public extension Logger {
     nonisolated(unsafe) private static var subsystem = Bundle.main.bundleIdentifier!
 
     @MainActor
-    func setup(bundleId: String) {
+    static func setup(bundleId: String) {
         Self.subsystem = bundleId
     }
 
