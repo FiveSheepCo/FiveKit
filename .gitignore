@@ -8,6 +8,3 @@ DerivedData/
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
 .netrc
 
-# Ignore resolved package versions
-# We want FiveKit to always use the latest version of each package
-Package.resolved

@@ -1,0 +1,24 @@
+{
+  "originHash" : "5ef67c85565c6cfcd60b5d14e4945f1d629d155f0d0f8a72847ed77ea98c350e",
+  "pins" : [
+    {
+      "identity" : "foundationplus",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/FiveSheepCo/FoundationPlus.git",
+      "state" : {
+        "revision" : "93fa9b84698f0ce447dce09adab16234fcb237f0",
+        "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "swiftuielements",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/FiveSheepCo/SwiftUIElements.git",
+      "state" : {
+        "revision" : "01090bcc8fddbf47f87e1072767a9a7b2f141d0f",
+        "version" : "1.1.1"
+      }
+    }
+  ],
+  "version" : 3
+}

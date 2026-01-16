@@ -19,7 +19,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/FiveSheepCo/FoundationPlus.git", .upToNextMajor(from: "1.0.1")),
-        .package(url: "https://github.com/FiveSheepCo/SwiftUIElements.git", .upToNextMajor(from: "1.0.1")),
+        .package(url: "https://github.com/FiveSheepCo/SwiftUIElements.git", .upToNextMajor(from: "1.1.0")),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
