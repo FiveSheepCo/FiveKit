@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/FiveSheepCo/FoundationPlus.git",
       "state" : {
-        "revision" : "93fa9b84698f0ce447dce09adab16234fcb237f0",
-        "version" : "1.0.1"
+        "revision" : "e0ddff70d1daf5a158fa847d7e3fd7c0fca257b3",
+        "version" : "1.0.3"
       }
     },
     {
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/FiveSheepCo/SwiftUIElements.git",
       "state" : {
-        "revision" : "01090bcc8fddbf47f87e1072767a9a7b2f141d0f",
-        "version" : "1.1.1"
+        "revision" : "a41a1f31689b8220f1965ed64097b8a61c6e7e81",
+        "version" : "1.1.3"
       }
     }
   ],

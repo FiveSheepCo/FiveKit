@@ -10,11 +10,10 @@ final class LogStore {
         do {
             let store = try OSLogStore(scope: .currentProcessIdentifier)
             let position = store.position(date: oneWeekAgo)
-            return try await store
-                .getEntries(at: position)
+            return try store
+                .getEntries(at: position, matching: NSPredicate(format: "subsystem == %@", Bundle.main.bundleIdentifier!))
                 .compactMap { $0 as? OSLogEntryLog }
-                .asyncFilter { $0.subsystem == Bundle.main.bundleIdentifier! }
-                .asyncMap { "[\($0.date.formatted())] [\($0.category)] \($0.composedMessage)" }
+                .map { "[\($0.date.formatted())] [\($0.category)] \($0.composedMessage)" }
         } catch {
             return []
         }
