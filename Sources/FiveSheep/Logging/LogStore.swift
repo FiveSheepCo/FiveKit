@@ -10,8 +10,13 @@ final class LogStore {
         do {
             let store = try OSLogStore(scope: .currentProcessIdentifier)
             let position = store.position(date: oneWeekAgo)
-            return try store
-                .getEntries(at: position, matching: NSPredicate(format: "subsystem == %@", Bundle.main.bundleIdentifier!))
+            let predicate = NSPredicate(
+                format: "subsystem == %@ AND eventType == %@",
+                Bundle.main.bundleIdentifier!,
+                "logEvent"
+            )
+            let logEvents: [OSLogEntry] = Array(try store.getEntries(at: position, matching: predicate))
+            return logEvents
                 .compactMap { $0 as? OSLogEntryLog }
                 .map { "[\($0.date.formatted())] [\($0.category)] \($0.composedMessage)" }
         } catch {
